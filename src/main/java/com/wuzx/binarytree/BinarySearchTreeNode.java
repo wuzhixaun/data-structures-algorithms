@@ -80,7 +80,6 @@ public class BinarySearchTreeNode {
         System.out.println(node.data);
     }
 
-
     /**
      *                 ┌───┐
      *                 │ 10│
