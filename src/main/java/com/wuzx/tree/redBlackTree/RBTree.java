@@ -50,11 +50,23 @@ public class RBTree {
             return;
         }
 
-        // 从根节点，找到最下面的子节点
-        RBTreeNode son = findSonNode(root, key);
 
-        // 最先的子节点就是需要添加节点的父节点
-        RBTreeNode parent = son;
+        RBTreeNode parent = root;
+        RBTreeNode son = null;
+        if (key <= parent.key) {
+            son = parent.left;
+        } else {
+            son = parent.right;
+        }
+        //find the position
+        while (son != null) {
+            parent = son;
+            if (key <= parent.key) {
+                son = parent.left;
+            } else {
+                son = parent.right;
+            }
+        }
 
         if (key <= parent.key) {
             parent.left = node;
@@ -84,7 +96,7 @@ public class RBTree {
             grandFather = father.parent; // 祖父节点
 
             // 父亲节点是左孩子
-            if (father == grandFather.left) {
+            if (father ==  grandFather.left) {
                 RBTreeNode uncle = grandFather.right; // 叔叔节点
 
                 // 如果叔叔节点是红色，则需要变换颜色即可
@@ -92,7 +104,6 @@ public class RBTree {
                     setBlack(father);
                     setBlack(uncle);
                     setRed(grandFather);
-
                     node = grandFather;
                     continue;
                 }
@@ -239,21 +250,7 @@ public class RBTree {
      */
     private RBTreeNode findSonNode(RBTreeNode parent, int key) {
         // 如果没有孩子节点返回父节点
-        RBTreeNode son = null;
-        if (key <= parent.key) {
-            son = parent.left;
-        } else {
-            son = parent.right;
-        }
-        //find the position
-        while (son != null) {
-            parent = son;
-            if (key <= parent.key) {
-                son = parent.left;
-            } else {
-                son = parent.right;
-            }
-        }
+
         return parent;
     }
 

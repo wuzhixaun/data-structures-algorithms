@@ -26,7 +26,6 @@ public class RBTreeNode {
         return "RBTreeNode{" +
                 "key=" + key +
                 ", cloor=" + (isBlack ? "black" : "red") +
-                ", parent=" + parent +
                 ", left=" + left +
                 ", right=" + right +
                 '}';
