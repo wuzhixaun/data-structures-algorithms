@@ -1,4 +1,4 @@
-package com.wuzx.binarytree;
+package com.wuzx.tree.binarytree;
 
 public class TreeNode {
 

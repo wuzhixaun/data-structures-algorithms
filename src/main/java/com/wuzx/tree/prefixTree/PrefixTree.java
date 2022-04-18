@@ -1,4 +1,4 @@
-package com.wuzx.tree;
+package com.wuzx.tree.prefixTree;
 
 
 import org.apache.commons.lang.StringUtils;
