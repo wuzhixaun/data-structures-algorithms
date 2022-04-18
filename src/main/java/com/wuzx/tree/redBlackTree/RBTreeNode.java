@@ -25,7 +25,7 @@ public class RBTreeNode {
     public String toString() {
         return "RBTreeNode{" +
                 "key=" + key +
-                ", isBlack=" + isBlack +
+                ", cloor=" + (isBlack ? "black" : "red") +
                 ", parent=" + parent +
                 ", left=" + left +
                 ", right=" + right +
